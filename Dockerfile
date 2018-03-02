@@ -1,9 +1,5 @@
-FROM sudsy/dotnetoneplustwo
+FROM microsoft/dotnet:2.1-sdk-alpine
 
 #add aws cli tools
 
-RUN apt-get update
-
-RUN apt-get -y install python-pip zip jq
-
-RUN pip install awscli
+RUN apk add zip aws-cli --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/
